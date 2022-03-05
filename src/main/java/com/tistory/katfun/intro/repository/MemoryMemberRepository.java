@@ -1,10 +1,12 @@
 package com.tistory.katfun.intro.repository;
 
 import com.tistory.katfun.intro.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.sql.Array;
 import java.util.*;
 
+@Repository
 public class MemoryMemberRepository implements MemberRepository {
 
     private static Map<Long, Member> store = new HashMap<>();

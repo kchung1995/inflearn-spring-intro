@@ -3,16 +3,20 @@ package com.tistory.katfun.intro.service;
 import com.tistory.katfun.intro.domain.Member;
 import com.tistory.katfun.intro.repository.MemberRepository;
 import com.tistory.katfun.intro.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MemberService {
 
     private final MemberRepository memberRepository;
 
     // 테스트 코드에서 같은 repository를 사용하기 위해 생성자를 사용
     // (직접 생성하는 것이 아니라 외부에서 넣어주도록)
+    @Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
@@ -49,6 +53,5 @@ public class MemberService {
     public Optional<Member> findOne(Long memberId) {
         return memberRepository.findById(memberId);
     }
-
 
 }
