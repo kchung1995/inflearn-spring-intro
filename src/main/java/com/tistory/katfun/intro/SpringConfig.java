@@ -1,6 +1,7 @@
 package com.tistory.katfun.intro;
 
 import com.tistory.katfun.intro.repository.JdbcMemberRepository;
+import com.tistory.katfun.intro.repository.JdbcTemplateMemberRepository;
 import com.tistory.katfun.intro.repository.MemberRepository;
 import com.tistory.katfun.intro.repository.MemoryMemberRepository;
 import com.tistory.katfun.intro.service.MemberService;
@@ -28,6 +29,7 @@ public class SpringConfig {
     @Bean
     public MemberRepository memberRepository() {
 //        return new MemoryMemberRepository();
-        return new JdbcMemberRepository(dataSource);
+//        return new JdbcMemberRepository(dataSource);
+        return new JdbcTemplateMemberRepository(dataSource);
     }
 }
