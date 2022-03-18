@@ -1,5 +1,6 @@
 package com.tistory.katfun.intro;
 
+import com.tistory.katfun.intro.aop.TimeTraceAop;
 import com.tistory.katfun.intro.repository.*;
 import com.tistory.katfun.intro.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,11 @@ public class SpringConfig {
     @Bean
     public MemberService memberService() {
         return new MemberService(memberRepository);
+    }
+
+    @Bean
+    public TimeTraceAop timeTraceAop() {
+        return new TimeTraceAop();
     }
 
 //    @Bean
